@@ -56,12 +56,11 @@ section.alt{background:var(--soft)}
 
 /* header */
 .head{text-align:center;padding:60px 0 8px}
-.title{font-size:clamp(1.8rem,4.4vw,2.8rem);font-weight:700;letter-spacing:-.02em;line-height:1.15;max-width:22ch;margin:0 auto}
+.title{font-size:clamp(1.7rem,4.2vw,2.8rem);font-weight:700;letter-spacing:-.02em;line-height:1.2;margin:0 auto}
 .title .name{display:block;font-size:1.25em;margin-bottom:.1em}
 .venue{display:inline-block;margin-top:16px;font-weight:600;padding:3px 14px;border:1.5px solid var(--ink);border-radius:20px}
 .authors{margin-top:20px;font-size:1.1rem;line-height:1.9}
-.authors a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);margin:0 .45em;white-space:nowrap}
-.authors a:hover{border-color:var(--ink)}
+.authors .au{margin:0 .45em;white-space:nowrap}
 .aff{margin-top:4px;color:var(--ink2)}
 .aff span{margin:0 .6em;white-space:nowrap}
 .notes{margin-top:4px;color:var(--ink2);font-size:.83rem}
@@ -71,7 +70,7 @@ section.alt{background:var(--soft)}
 .links svg{width:17px;height:17px;fill:currentColor}
 
 /* teaser animation */
-.tldr{text-align:center;font-size:clamp(1.25rem,2.6vw,1.6rem);font-weight:600;line-height:1.35;letter-spacing:-.01em;max-width:30ch;margin:4px auto 26px}
+.tldr{text-align:center;font-size:clamp(1.15rem,2.4vw,1.5rem);font-weight:600;line-height:1.35;letter-spacing:-.01em;max-width:none;margin:4px auto 26px}
 figure{margin:0}
 .anim{border:1px solid var(--line);border-radius:14px;padding:20px 20px 16px;background:var(--bg)}
 .status{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:.92rem;min-height:1.9em}
@@ -82,9 +81,9 @@ figure{margin:0}
 #status .mono{font-family:var(--mono);color:var(--ink);font-weight:600}
 #status .hot{color:var(--ink);font-weight:600}
 .strip-scroll{overflow-x:auto;padding:28px 2px 4px}
-.strip{display:flex;gap:5px;min-width:max-content;margin:0 auto;width:max-content}
-.tok{position:relative;width:52px;height:40px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.88rem;font-weight:500;border:2px solid transparent;transition:background .35s,color .3s,border-color .3s}
-.tok.masked{color:var(--ink2);font-size:.72rem}
+.strip{display:flex;gap:4px;min-width:max-content;margin:0 auto;width:max-content}
+.tok{position:relative;width:47px;height:38px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.82rem;font-weight:500;border:2px solid transparent;transition:background .35s,color .3s,border-color .3s}
+.tok.masked{color:var(--ink2);font-size:.68rem}
 .tok.done{background:var(--chip);color:var(--ink)}
 .tok.now{border-color:var(--ink)}
 .tok.pivot{background:var(--pivot);color:var(--pivot-ink);font-weight:600}
@@ -144,12 +143,11 @@ td .sub{color:var(--ink2);font-weight:400;font-size:.78rem}
 /* bibtex */
 .bib{position:relative}
 .bib pre{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:18px;overflow-x:auto;font-family:var(--mono);font-size:.84rem;line-height:1.6;margin:0}
-.bib button{position:absolute;top:10px;right:10px;font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:5px 12px;border-radius:7px;cursor:pointer}
 footer{padding:32px 0 52px;text-align:center;color:var(--ink2);font-size:.84rem;border-top:1px solid var(--line)}
 
 @media (max-width:560px){
   body{font-size:16px}
-  .tok{width:44px;height:36px;font-size:.8rem}
+  .tok{width:42px;height:34px;font-size:.76rem}
   .anim{padding:14px 12px 12px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -158,16 +156,15 @@ footer{padding:32px 0 52px;text-align:center;color:var(--ink2);font-size:.84rem;
 <body>
 
 <header class="head wrap">
-  <h1 class="title"><span class="name">Pivot-SD</span>Efficient Self-Distillation for Masked Diffusion Language Models</h1>
+  <h1 class="title"><span class="name">Pivot-SD</span>Efficient Self-Distillation for<br>Masked Diffusion Language Models</h1>
   <div class="venue">EMNLP 2026</div>
-  <!-- TODO: author homepages -->
   <div class="authors">
-    <a href="#">Seo Hyun Kim</a><sup>1,2,*‡</sup>
-    <a href="#">Sunwoo Hong</a><sup>1,2,*‡</sup>
-    <a href="#">Younwoo Choi</a><sup>2</sup>
-    <a href="#">Chen-Hao Chao</a><sup>2</sup>
-    <a href="#">Se-Young Yun</a><sup>1,†</sup>
-    <a href="#">Rahul G. Krishnan</a><sup>2,†</sup>
+    <span class="au">Seo Hyun Kim</span><sup>1,2,*‡</sup>
+    <span class="au">Sunwoo Hong</span><sup>1,2,*‡</sup>
+    <span class="au">Younwoo Choi</span><sup>2</sup>
+    <span class="au">Chen-Hao Chao</span><sup>2</sup>
+    <span class="au">Se-Young Yun</span><sup>1,†</sup>
+    <span class="au">Rahul G. Krishnan</span><sup>2,†</sup>
   </div>
   <div class="aff"><span><sup>1</sup>KAIST AI</span><span><sup>2</sup>University of Toronto &amp; Vector Institute</span></div>
   <div class="notes"><sup>*</sup>Equal contribution &nbsp; <sup>†</sup>Corresponding authors &nbsp; <sup>‡</sup>Work done as visiting researchers at the University of Toronto and the Vector Institute</div>
@@ -182,7 +179,7 @@ footer{padding:32px 0 52px;text-align:center;color:var(--ink2);font-size:.84rem;
 
 <section>
   <div class="wrap">
-    <p class="tldr">Training a diffusion LM doesn't need every token, just the few pivots that shape the rest of the generation.</p>
+    <p class="tldr">Training a diffusion LM doesn't need every token,<br>just the few pivots that shape the rest of the generation.</p>
     <figure>
       <div class="anim" aria-label="Animation of pivot selection during masked denoising">
         <div class="status"><span class="traj-badge ok" id="badge">Correct trajectory</span><span id="status"></span></div>
@@ -190,7 +187,7 @@ footer{padding:32px 0 52px;text-align:center;color:var(--ink2);font-size:.84rem;
         <div class="heat-scroll"><svg id="heat" viewBox="0 0 820 320" role="img" aria-label="Entropy heatmap: denoising step by token position"></svg></div>
         <div class="outcome" id="outcome"></div>
       </div>
-      <figcaption>Rows are denoising steps. Left: predictive entropy of each masked position. Right: their sum. The most confident mask is unmasked (outlined). If the next prediction becomes much more certain, that commitment is a <b>pivot</b> (★). Illustrative example.</figcaption>
+      <figcaption>Illustrative example of pivot selection. Left: predictive entropy of each masked position. Right: the sum of entropy. Rows are denoising steps. The most confident mask is unmasked (outlined). If the next prediction becomes much more certain, that commitment is a <b>pivot</b> (★).</figcaption>
     </figure>
   </div>
 </section>
@@ -208,7 +205,7 @@ footer{padding:32px 0 52px;text-align:center;color:var(--ink2);font-size:.84rem;
     <p><b>1. Find pivots.</b> For each commitment of token <span class="tex" data-tex="y_p">y_p</span> at position <span class="tex" data-tex="p">p</span> and step <span class="tex" data-tex="t">t</span>, we fix it and measure how much the entropy over the remaining masked positions drops. The top-<span class="tex" data-tex="K">K</span> commitments per trajectory are the pivots.</p>
     <div class="eq" data-tex="\begin{gathered} g(t,p) = \frac{H_{\mathrm{pre}}(t,p) - H_{\mathrm{post}}(t,p)}{H_{\mathrm{pre}}(t,p)} \\[6pt] H_{\mathrm{pre}} = \sum_{i \in \mathcal{B}_t \setminus \{p\}} h_{\theta_0}(i \mid M_t), \quad H_{\mathrm{post}} = \sum_{i \in \mathcal{B}_t \setminus \{p\}} h_{\theta_0}\big(i \mid M_t^{[p \leftarrow y_p]}\big) \end{gathered}">g(t, p) = (H_pre − H_post) / H_pre</div>
     <p><b>2. Supervise only pivots.</b> A verifier labels each trajectory. Pivots of correct trajectories are reinforced with cross-entropy; pivots of incorrect ones are suppressed with unlikelihood, conditioned on the partially masked state <span class="tex" data-tex="M_t">M_t</span>. All other tokens receive no loss.</p>
-    <div class="eq" data-tex="\mathcal{L}_{\mathrm{pivot}} = \mathbb{1}[s(\tau)=+1]\,\big(-\log P_\theta(y_p \mid M_t)\big) \;+\; \lambda_{\mathrm{neg}}\,\mathbb{1}[s(\tau)=-1]\,\big(-\log\big(1 - P_\theta(y_p \mid M_t)\big)\big)">L = 1[correct]·(−log P(y_p|M_t)) + λ·1[incorrect]·(−log(1 − P(y_p|M_t)))</div>
+    <div class="eq" data-tex="\begin{aligned} \mathcal{L}_{\mathrm{pivot}} &= \mathbb{1}[s(\tau)=+1]\,\big(-\log P_\theta(y_p \mid M_t)\big) \\[4pt] &\quad + \lambda_{\mathrm{neg}}\,\mathbb{1}[s(\tau)=-1]\,\big(-\log\big(1 - P_\theta(y_p \mid M_t)\big)\big) \end{aligned}">L = 1[correct]·(−log P(y_p|M_t)) + λ·1[incorrect]·(−log(1 − P(y_p|M_t)))</div>
   </div>
   <div class="wrap">
     <figure>
@@ -237,8 +234,8 @@ footer{padding:32px 0 52px;text-align:center;color:var(--ink2);font-size:.84rem;
     <p class="tcap">Accuracy (%), 256-token generation. All methods use the same budget: 200 questions, 4 rollouts each, 1,000 steps. Mean of three runs.</p>
 
     <h3 class="sub-h">Efficiency against online RL</h3>
-    <figure class="eff-fig"><svg class="eff" viewBox="0 0 560 345" role="img" aria-label="Average accuracy versus total compute hours for diffu-GRPO, wd1++ and Pivot-SD"><defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--neg)"/></marker></defs><line x1="64" y1="292.0" x2="530" y2="292.0" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="292.0" text-anchor="end" dominant-baseline="central">45</text><line x1="64" y1="254.3" x2="530" y2="254.3" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="254.3" text-anchor="end" dominant-baseline="central">46</text><line x1="64" y1="216.6" x2="530" y2="216.6" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="216.6" text-anchor="end" dominant-baseline="central">47</text><line x1="64" y1="178.9" x2="530" y2="178.9" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="178.9" text-anchor="end" dominant-baseline="central">48</text><line x1="64" y1="141.1" x2="530" y2="141.1" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="141.1" text-anchor="end" dominant-baseline="central">49</text><line x1="64" y1="103.4" x2="530" y2="103.4" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="103.4" text-anchor="end" dominant-baseline="central">50</text><line x1="64" y1="65.7" x2="530" y2="65.7" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="65.7" text-anchor="end" dominant-baseline="central">51</text><line x1="64" y1="28.0" x2="530" y2="28.0" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="28.0" text-anchor="end" dominant-baseline="central">52</text><line x1="64.0" y1="28" x2="64.0" y2="292" stroke="var(--line)" stroke-dasharray="3 4"/><text x="64.0" y="310" text-anchor="middle">0</text><line x1="157.2" y1="28" x2="157.2" y2="292" stroke="var(--line)" stroke-dasharray="3 4"/><text x="157.2" y="310" text-anchor="middle">5</text><line x1="250.4" y1="28" x2="250.4" y2="292" stroke="var(--line)" stroke-dasharray="3 4"/><text x="250.4" y="310" text-anchor="middle">10</text><line x1="343.6" y1="28" x2="343.6" y2="292" stroke="var(--line)" stroke-dasharray="3 4"/><text x="343.6" y="310" text-anchor="middle">15</text><line x1="436.8" y1="28" x2="436.8" y2="292" stroke="var(--line)" stroke-dasharray="3 4"/><text x="436.8" y="310" text-anchor="middle">20</text><line x1="530.0" y1="28" x2="530.0" y2="292" stroke="var(--line)" stroke-dasharray="3 4"/><text x="530.0" y="310" text-anchor="middle">25</text><rect x="64" y="28" width="466" height="264" fill="none" stroke="var(--ink2)"/><text x="297.0" y="332" text-anchor="middle" class="ax">Total compute (hours, 2× L40)</text><text transform="translate(18 160.0) rotate(-90)" text-anchor="middle" class="ax">Average accuracy (%)</text><line x1="354.8" y1="118.5" x2="134.2" y2="66.8" stroke="var(--neg)" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#arr)"/><text x="216.8" y="120.4" class="ann">~8× faster</text><text x="216.8" y="135.5" class="ann">&gt; +3 pts</text><rect x="158.2" y="234.2" width="13" height="13" style="fill:var(--c-grpo)"/><rect x="484.4" y="195.4" width="13" height="13" style="fill:var(--c-grpo)"/><polygon points="131.1,219.1 138.6,233.1 123.6,233.1" style="fill:var(--c-wd1)"/><polygon points="386.5,178.8 394.0,192.8 379.0,192.8" style="fill:var(--c-wd1)"/><polygon points="116.2,49.0 119.6,57.3 128.6,58.0 121.8,63.9 123.8,72.6 116.2,67.9 108.6,72.6 110.6,63.9 103.8,58.0 112.8,57.3" style="fill:var(--pivot);stroke:var(--ink);stroke-width:1.2;stroke-linejoin:round"/><text x="149.7" y="263.7" class="lbl">1k steps</text><text x="382.5" y="165.7" class="lbl">5k steps</text><text x="136.2" y="48.8" class="lbl" style="fill:var(--ink);font-weight:600">Pivot-SD 51.1</text><rect x="374.6" y="31.0" width="138" height="78" rx="6" style="fill:var(--bg);stroke:var(--line)"/><rect x="382.1" y="40.5" width="13" height="13" style="fill:var(--c-grpo)"/><text x="402.6" y="47.0" dominant-baseline="central" class="leg">diffu-GRPO</text><polygon points="388.6,61.0 396.1,75.0 381.1,75.0" style="fill:var(--c-wd1)"/><text x="402.6" y="69.0" dominant-baseline="central" class="leg">wd1++</text><polygon points="388.6,83.7 390.7,88.8 396.2,89.3 392.0,92.8 393.3,98.2 388.6,95.3 383.9,98.2 385.2,92.8 381.0,89.3 386.5,88.8" style="fill:var(--pivot);stroke:var(--ink);stroke-width:1.2;stroke-linejoin:round"/><text x="402.6" y="91.0" dominant-baseline="central" class="leg" style="font-weight:600">Pivot-SD (ours)</text></svg>
-      <figcaption>Average accuracy over MATH500, GSM8K, HumanEval+ and MBPP+ (256 tokens) against total wall-clock hours. RL baselines generate rollouts online during training; Pivot-SD samples 800 rollouts once (2.5 h) and trains for 0.3 h.</figcaption>
+    <figure class="eff-fig"><svg class="eff" viewBox="0 0 560 345" role="img" aria-label="Average accuracy versus total compute hours for diffu-GRPO, wd1++ and Pivot-SD"><defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" style="fill:var(--neg)"/></marker></defs><line x1="64" y1="292.0" x2="530" y2="292.0" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="292.0" text-anchor="end" dominant-baseline="central">45</text><line x1="64" y1="254.3" x2="530" y2="254.3" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="254.3" text-anchor="end" dominant-baseline="central">46</text><line x1="64" y1="216.6" x2="530" y2="216.6" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="216.6" text-anchor="end" dominant-baseline="central">47</text><line x1="64" y1="178.9" x2="530" y2="178.9" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="178.9" text-anchor="end" dominant-baseline="central">48</text><line x1="64" y1="141.1" x2="530" y2="141.1" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="141.1" text-anchor="end" dominant-baseline="central">49</text><line x1="64" y1="103.4" x2="530" y2="103.4" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="103.4" text-anchor="end" dominant-baseline="central">50</text><line x1="64" y1="65.7" x2="530" y2="65.7" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="65.7" text-anchor="end" dominant-baseline="central">51</text><line x1="64" y1="28.0" x2="530" y2="28.0" stroke="var(--line)" stroke-dasharray="3 4"/><text x="54" y="28.0" text-anchor="end" dominant-baseline="central">52</text><line x1="64.0" y1="28" x2="64.0" y2="292" stroke="var(--line)" stroke-dasharray="3 4"/><text x="64.0" y="310" text-anchor="middle">0</text><line x1="157.2" y1="28" x2="157.2" y2="292" stroke="var(--line)" stroke-dasharray="3 4"/><text x="157.2" y="310" text-anchor="middle">5</text><line x1="250.4" y1="28" x2="250.4" y2="292" stroke="var(--line)" stroke-dasharray="3 4"/><text x="250.4" y="310" text-anchor="middle">10</text><line x1="343.6" y1="28" x2="343.6" y2="292" stroke="var(--line)" stroke-dasharray="3 4"/><text x="343.6" y="310" text-anchor="middle">15</text><line x1="436.8" y1="28" x2="436.8" y2="292" stroke="var(--line)" stroke-dasharray="3 4"/><text x="436.8" y="310" text-anchor="middle">20</text><line x1="530.0" y1="28" x2="530.0" y2="292" stroke="var(--line)" stroke-dasharray="3 4"/><text x="530.0" y="310" text-anchor="middle">25</text><rect x="64" y="28" width="466" height="264" fill="none" stroke="var(--ink2)"/><text x="297.0" y="332" text-anchor="middle" class="ax">Total compute (hours)</text><text transform="translate(18 160.0) rotate(-90)" text-anchor="middle" class="ax">Average accuracy (%)</text><line x1="354.8" y1="118.5" x2="134.2" y2="66.8" stroke="var(--neg)" stroke-width="1.8" stroke-dasharray="6 5" marker-end="url(#arr)"/><text x="216.8" y="120.4" class="ann">~8× faster</text><text x="216.8" y="135.5" class="ann">&gt; +3 pts</text><rect x="158.2" y="234.2" width="13" height="13" style="fill:var(--c-grpo)"/><rect x="484.4" y="195.4" width="13" height="13" style="fill:var(--c-grpo)"/><polygon points="131.1,219.1 138.6,233.1 123.6,233.1" style="fill:var(--c-wd1)"/><polygon points="386.5,178.8 394.0,192.8 379.0,192.8" style="fill:var(--c-wd1)"/><polygon points="116.2,49.0 119.6,57.3 128.6,58.0 121.8,63.9 123.8,72.6 116.2,67.9 108.6,72.6 110.6,63.9 103.8,58.0 112.8,57.3" style="fill:var(--pivot);stroke:var(--ink);stroke-width:1.2;stroke-linejoin:round"/><text x="149.7" y="263.7" class="lbl">1k steps</text><text x="382.5" y="165.7" class="lbl">5k steps</text><text x="136.2" y="48.8" class="lbl" style="fill:var(--ink);font-weight:600">Pivot-SD 51.1</text><rect x="374.6" y="31.0" width="138" height="78" rx="6" style="fill:var(--bg);stroke:var(--line)"/><rect x="382.1" y="40.5" width="13" height="13" style="fill:var(--c-grpo)"/><text x="402.6" y="47.0" dominant-baseline="central" class="leg">diffu-GRPO</text><polygon points="388.6,61.0 396.1,75.0 381.1,75.0" style="fill:var(--c-wd1)"/><text x="402.6" y="69.0" dominant-baseline="central" class="leg">wd1++</text><polygon points="388.6,83.7 390.7,88.8 396.2,89.3 392.0,92.8 393.3,98.2 388.6,95.3 383.9,98.2 385.2,92.8 381.0,89.3 386.5,88.8" style="fill:var(--pivot);stroke:var(--ink);stroke-width:1.2;stroke-linejoin:round"/><text x="402.6" y="91.0" dominant-baseline="central" class="leg" style="font-weight:600">Pivot-SD (ours)</text></svg>
+      <figcaption>Average accuracy over MATH500, GSM8K, HumanEval+ and MBPP+ (256 tokens) against total wall-clock hours on 2× NVIDIA L40. RL baselines generate their rollouts online, inside training. The Pivot-SD figure includes its offline data generation: 800 rollouts sampled once (2.5 h) plus 0.3 h of training.</figcaption>
     </figure>
   </div>
 </section>
@@ -247,13 +244,13 @@ footer{padding:32px 0 52px;text-align:center;color:var(--ink2);font-size:.84rem;
   <div class="wrap narrow">
     <h2>BibTeX</h2>
     <div class="bib">
-      <button id="copyBib">Copy</button>
 <pre id="bibText">@inproceedings{kim2026pivotsd,
   title     = {Pivot-SD: Efficient Self-Distillation for Masked Diffusion Language Models},
   author    = {Kim, Seo Hyun and Hong, Sunwoo and Choi, Younwoo and Chao, Chen-Hao and Yun, Se-Young and Krishnan, Rahul G.},
   booktitle = {Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing},
   year      = {2026}
 }</pre>
+      <p class="tcap">Placeholder entry; we will replace it with the ACL Anthology one once the proceedings are published.</p>
     </div>
   </div>
 </section>
@@ -420,11 +417,6 @@ footer{padding:32px 0 52px;text-align:center;color:var(--ink2);font-size:.84rem;
     <span class="tag ok">Correct</span>${mk(TOK_OK,r.ok)}
     <span class="tag bad">Incorrect</span>${mk(TOK_BAD,r.bad)}`).join("");
 
-  $("copyBib").onclick=async()=>{
-    try{ await navigator.clipboard.writeText($("bibText").textContent); $("copyBib").textContent="Copied"; }
-    catch(e){ $("copyBib").textContent="Select to copy"; }
-    setTimeout(()=>$("copyBib").textContent="Copy",1600);
-  };
 })();
 </script>
 </body>
